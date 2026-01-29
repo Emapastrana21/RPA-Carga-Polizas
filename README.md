@@ -13,7 +13,7 @@ Este proyecto es una solución de **Automatización Robótica de Procesos (RPA)*
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/TU_USUARIO/RPA-Polizas.git](https://github.com/TU_USUARIO/RPA-Polizas.git)
+   git clone https://github.com/Emapastrana21/RPA-Carga-Polizas.git
     cd RPA-Polizas
     ```
 
