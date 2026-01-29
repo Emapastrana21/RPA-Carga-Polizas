@@ -11,12 +11,10 @@ Este proyecto es una solución de **Automatización Robótica de Procesos (RPA)*
 
 ## 🛠️ Instalación y Uso
 
-1.  **Clonar el repositorio:**
-    ```bash
-  git clone https://github.com/Emapastrana21/RPA-Carga-Polizas.git
-  
-cd RPA-Carga-Polizas
-    ```
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/Emapastrana21/RPA-Carga-Polizas.git](https://github.com/Emapastrana21/RPA-Carga-Polizas.git)
+   cd RPA-Carga-Polizas
 
 2.  **Instalar dependencias:**
     ```bash
@@ -39,9 +37,5 @@ cd RPA-Carga-Polizas
 6.  **Validación de Seguridad:** Si detecta un Captcha, pausa la ejecución y solicita intervención humana vía consola.
 7.  Confirma la transacción y registra el éxito/error en la consola.
 
-## 📸 Demo
 
-*(Acá podés poner un link a un video de YouTube o un GIF mostrando el bot funcionando)*
-
----
 **Autor:** Emanuel Pastrana
