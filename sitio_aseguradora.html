@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Carga de Pólizas - DEMO</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f0f0f0; }
+        .container { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: 0 auto; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; margin-top: 20px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #mensaje-exito { color: green; margin-top: 15px; display: none; font-weight: bold; text-align: center;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registro de Terceros</h2>
+    <form id="formulario-poliza" onsubmit="procesarFormulario(event)">
+        
+        <label for="aseguradora">Aseguradora:</label>
+        <input type="text" id="aseguradora" placeholder="Ej: La Segunda">
+
+        <label for="poliza">Número de Póliza:</label>
+        <input type="text" id="poliza" placeholder="Ej: 1234-5678">
+
+        <label for="barrio">Barrio:</label>
+        <select id="barrio">
+            <option value="">Seleccione...</option>
+            <option value="centro">Centro</option>
+            <option value="palermo">Palermo</option>
+            <option value="belgrano">Belgrano</option>
+        </select>
+
+        <label for="dni">DNI Asegurado:</label>
+        <input type="text" id="dni" placeholder="Sin puntos">
+
+        <label for="nombre_completo">Nombre y Apellido:</label>
+        <input type="text" id="nombre_completo">
+
+        <label for="fecha_inicio">Inicio Vigencia:</label>
+        <input type="date" id="fecha_inicio">
+
+        <label for="fecha_fin">Fin Vigencia:</label>
+        <input type="date" id="fecha_fin">
+
+        <label for="documentacion">Adjuntar Póliza (PDF):</label>
+        <input type="file" id="documentacion">
+
+        <div style="background: #ffe6e6; padding: 10px; border: 1px solid red; margin-top: 15px;">
+            <label style="color: red; margin-top: 0;">⚠ Control de Seguridad (Simulacro)</label>
+            <div style="margin-top: 5px;">
+                <input type="checkbox" id="captcha_check" style="width: auto;"> 
+                <label for="captcha_check" style="display:inline; font-weight: normal;">No soy un robot</label>
+            </div>
+        </div>
+
+        <button type="submit">Confirmar Carga</button>
+    </form>
+
+    <div id="mensaje-exito">
+        ✅ Carga exitosa. Póliza registrada correctamente.
+    </div>
+</div>
+
+<script>
+    // Lógica actualizada con bloqueo de seguridad
+    function procesarFormulario(e) {
+        e.preventDefault();
+        
+        // 1. VALIDACIÓN DEL CAPTCHA
+        const captcha = document.getElementById('captcha_check');
+        if (!captcha.checked) {
+            alert("❌ ¡ALTO AHÍ! Debes resolver el Captcha manual para continuar.");
+            return; // Cortamos la ejecución aquí si no está tildado
+        }
+
+        // 2. Si pasó el captcha, seguimos normal
+        const btn = document.querySelector('button');
+        btn.textContent = "Procesando...";
+        btn.disabled = true;
+
+        // Simulamos que tarda 2 segundos en procesar
+        setTimeout(() => {
+            console.log("Datos enviados al servidor...");
+            document.getElementById('mensaje-exito').style.display = 'block';
+            btn.textContent = "Confirmar Carga";
+            btn.disabled = false;
+            
+            // Opcional: limpiar el captcha para la siguiente vuelta
+            captcha.checked = false; 
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>
