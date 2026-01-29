@@ -10,11 +10,9 @@ Este proyecto es una solución de **Automatización Robótica de Procesos (RPA)*
 * **Manejo de Archivos:** Lectura dinámica de Excel (.xlsx) y carga automatizada de PDFs en formularios web.
 
 ## 🛠️ Instalación y Uso
-
 1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/Emapastrana21/RPA-Carga-Polizas.git](https://github.com/Emapastrana21/RPA-Carga-Polizas.git)
-   
    cd RPA-Carga-Polizas
 
 2.  **Instalar dependencias:**
